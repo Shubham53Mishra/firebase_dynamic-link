@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const linkRoutes = require('./routes/link');
+const firebase = require('./firebase'); // Firebase connection
 
 const app = express();
 app.use(cors());
