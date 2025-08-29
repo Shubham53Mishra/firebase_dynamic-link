@@ -33,11 +33,11 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 // Endpoint to generate new short links
 const crypto = require('crypto');
 app.post('/generate', async (req, res) => {
-  const { target } = req.body;
-  if (!target) return res.status(400).json({ error: 'Target URL required' });
+  const { target, senderUid, receiverUid } = req.body;
+  if (!target || !senderUid || !receiverUid) return res.status(400).json({ error: 'Target, senderUid, receiverUid required' });
   const short = crypto.randomBytes(4).toString('hex');
   const Link = require('./models/Link');
-  const link = new Link({ short, target });
+  const link = new Link({ short, target, senderUid, receiverUid });
   await link.save();
-  res.json({ short, target, url: `${req.protocol}://${req.get('host')}/${short}` });
+  res.json({ short, target, senderUid, receiverUid, url: `${req.protocol}://${req.get('host')}/${short}` });
 });
