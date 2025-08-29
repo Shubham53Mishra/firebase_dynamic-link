@@ -1,26 +1,13 @@
 {
-    "project_info": {
-        "project_number": "226050512443",
-        "firebase_url": "https://lifecycle-management-app-459ea-default-rtdb.firebaseio.com",
-        "project_id": "lifecycle-management-app-459ea",
-        "storage_bucket": "lifecycle-management-app-459ea.firebasestorage.app"
-    },
-    "client": [{
-        "client_info": {
-            "mobilesdk_app_id": "1:226050512443:android:9c0d2e470cafce19ad2e1e",
-            "android_client_info": {
-                "package_name": "com.example.merge_app"
-            }
-        },
-        "oauth_client": [],
-        "api_key": [{
-            "current_key": "AIzaSyDKTxDcdSkqbMrYzoQ35gZ2fzO-4CEWuPo"
-        }],
-        "services": {
-            "appinvite_service": {
-                "other_platform_oauth_client": []
-            }
-        }
-    }],
-    "configuration_version": "1"
+  "type": "service_account",
+  "project_id": "lifecycle-management-app-459ea",
+  "private_key_id": "ae47bd1235325ea0008a128e7ecfc605428a3335",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC3yILSlmZhQ+kx\nvKZaW8Ve+JBH86zudLNkUVjPdC8qx8fXmBKLkdVMuOYh3E2Gr7rB2r35d1JqvkmP\nbaI9BDZRwmB1JZP4gwknqJIGyH2GsSDaLFGpj0xRwyLG7y9XDviei7T1b6pM9lhj\nhTzMLP9ZrQcusvhWU77W5LjCpo2q4E/t+8RQpysUmzNiPp9orgND/8QIjkQVrhgU\ninbMMlf5OLhiJOcjHWfcpl6SZNuCk3ABmtAyS+5/EfamB/PJVMFnpWfavXYNzrza\nC2H7r/GrY0Wtv0/fpk2RXCosg1c6TZ8HnNX2oqPVM2Ct2j5tmVkdzUrjxkpj1jOY\nEluT5N29AgMBAAECggEADRsR5TWPeHkwzHiw/jmUIhkkpNTmLJ0K2+kHJcgZwvm7\nMQ8pp2VPaii3VIvSxXuLnF5edMdDC9SlB0Lgsmw1+W+clE4JNswVX4wgWbZ7aRsB\nhj1p12ceIKiDNt+ApzsslJXO4j/Dy7g3hmVOeBrvXLQ/kl914SYYsldeK5dX++rj\nJhUfKvHN45ZP7suhZuC9fJjPh90rAEe2swaqXWn1tKjOyT8E81o+y3zdnKB2TfO9\nETB+hQPHRLc9rUuEHz0ujs2OqWzaJk868wy5rtm0qTQlezbOkTj+99ZYN/rSdV2b\nbdChvHptPTrUzzg90sf8oxp3o/PP/kD4/1jcVYtpwQKBgQDegy5+ljBhjPPNjZL1\nW9+82ibRfpUoiyiv2ZF6MQ4/jeEnU0syBU/vJTB3/eR8vyweBNv/ZwxLbUCKJY/0\nZluAsVkSHpRDKMMjFanHLuRI+XyscpGZp7qhhFSwrvYvgoJ3U7CS8VIfp0p0mgLi\nl43iIcaoxBL5HV6ArSJ8x48z3QKBgQDTcTIoZEYniHbrSfHLmbYuPQYMmmwziUbh\nYkFMW1zke/dTmGfszd9SHRAepQo/Wnncd6JR9Rv2MaSYREIhCHcrL4NjPQzgAiNx\nG3eOt69kuMIpaWT+Yqunn4NSeLOOoi4z+iTC6ztVSB3jqpyps0WWa+budbrvOI5c\n338THYcjYQKBgQC8m5dKh4Xk+jQiFRHvVfv1OTjUNKa8IhDP1eyhFXnNVzb1PX4s\nnSIfRHesDhKhxu3fWCEegTuDp8ygDKzT7fs7v5gPasojjyaw04kAo/eu/4K1LbvK\n8ciZZfDffr6AkPCDsvWl6FXDLOtIoM83QF1sw1J/9QtcC4/yJE9qU0FIJQKBgQCI\ndNow9R3Nb6WHja4tfqLzTlC0G4jO7b4/wIBxvdjCYDqqyYXwbqC8RqNbk5l8b3CL\n1u17xRrplPorhonC9cqqpTw+9Gx1uQuUeGx9P5BDCXXM8gbKoXU0dZ5zwA/pckMt\nKjdFUDh3flZD0pzObDLxs+tSY8pjjnVZ/Kbu+DR5oQKBgGixW0FTIDjzBf2MLLGi\nE3+E6PCQbb+N2bmdw0GMsUwxS3y3N9l90U/c9RX0am0AQaLr19NTOsLSgIbvem2w\npFqSSAx6aaa9SngQjmcUGswmIqTIGKEPwAFfz/IBoiKfqwj8t1XopKDKeqJDqCoY\nJQD0MXLEYhim6jgCowsv4Xiw\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@lifecycle-management-app-459ea.iam.gserviceaccount.com",
+  "client_id": "109854119428483160824",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40lifecycle-management-app-459ea.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }
