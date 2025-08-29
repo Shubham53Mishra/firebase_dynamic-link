@@ -2,16 +2,24 @@ const express = require('express');
 const router = express.Router();
 const Link = require('../models/Link');
 
-// Create a short link
+// Create a short link with Firebase Auth
+const admin = require('../firebase-admin');
 router.post('/shorten', async (req, res) => {
   const { target } = req.body;
-  const short = Math.random().toString(36).substring(2, 8);
+  const idToken = req.headers.authorization?.split('Bearer ')[1];
+  if (!idToken) {
+    return res.status(401).json({ error: 'No token provided' });
+  }
   try {
+    // Verify Firebase ID token
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    // Token is valid, create short link
+    const short = Math.random().toString(36).substring(2, 8);
     const link = new Link({ short, target });
     await link.save();
-    res.json({ short, target });
+    res.json({ short, target, uid: decodedToken.uid });
   } catch (err) {
-    res.status(500).json({ error: 'Could not create link' });
+    res.status(401).json({ error: 'Unauthorized: Invalid token' });
   }
 });
 
