@@ -29,3 +29,15 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch(err => console.error('MongoDB connection error:', err));
+
+// Endpoint to generate new short links
+const crypto = require('crypto');
+app.post('/generate', async (req, res) => {
+  const { target } = req.body;
+  if (!target) return res.status(400).json({ error: 'Target URL required' });
+  const short = crypto.randomBytes(4).toString('hex');
+  const Link = require('./models/Link');
+  const link = new Link({ short, target });
+  await link.save();
+  res.json({ short, target, url: `${req.protocol}://${req.get('host')}/${short}` });
+});
