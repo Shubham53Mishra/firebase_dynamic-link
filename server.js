@@ -4,6 +4,20 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const linkRoutes = require('./routes/link');
 const firebase = require('./firebase'); // Firebase connection
+const admin = require('firebase-admin');
+// Middleware to authenticate Firebase ID token
+async function authenticateToken(req, res, next) {
+  const authHeader = req.headers['authorization'];
+  if (!authHeader) return res.status(401).json({ error: 'Unauthorized: No token' });
+  const token = authHeader.split(' ')[1];
+  try {
+    const decoded = await admin.auth().verifyIdToken(token);
+    req.user = decoded;
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Unauthorized: Invalid token' });
+  }
+}
 
 const app = express();
 app.use(cors());
@@ -32,7 +46,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 // Endpoint to generate new short links
 const crypto = require('crypto');
-app.post('/generate', async (req, res) => {
+app.post('/generate', authenticateToken, async (req, res) => {
   const { target, senderUid, receiverUid } = req.body;
   if (!target || !senderUid || !receiverUid) return res.status(400).json({ error: 'Target, senderUid, receiverUid required' });
   const short = crypto.randomBytes(4).toString('hex');
