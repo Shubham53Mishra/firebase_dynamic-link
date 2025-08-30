@@ -5,14 +5,15 @@ require('firebase/database'); // If you need Realtime Database
 require('firebase/storage');  // If you need Storage
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDKTxDcdSkqbMrYzoQ35gZ2fzO-4CEWuPo",
-  authDomain: "lifecycle-management-app-459ea.firebaseapp.com",
-  databaseURL: "https://lifecycle-management-app-459ea-default-rtdb.firebaseio.com",
-  projectId: "lifecycle-management-app-459ea",
-  storageBucket: "lifecycle-management-app-459ea.appspot.com",  // ".app" hata ke ".appspot.com"
-  messagingSenderId: "226050512443",
-  appId: "1:226050512443:android:9c0d2e470cafce19ad2e1e"
+  apiKey: "AIzaSyBisoTANGdB8to8jWonfKFSwBYiWpB9v1Q",
+  authDomain: "dailynest-e2487.firebaseapp.com",
+  databaseURL: "https://dailynest-e2487-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "dailynest-e2487",
+  storageBucket: "dailynest-e2487.firebasestorage.app",
+  messagingSenderId: "435420807936",
+  appId: "1:435420807936:android:ea967b1d797980311d69e5"
 };
+
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
