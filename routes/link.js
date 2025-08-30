@@ -20,12 +20,12 @@ async function authenticateToken(req, res, next) {
 
 // POST /api/generate - create a new short link
 router.post('/generate', authenticateToken, async (req, res) => {
-  const { target, senderUid, receiverUid } = req.body;
-  if (!target || !senderUid) return res.status(400).json({ error: 'Target and senderUid required' });
+  const { target } = req.body;
+  if (!target) return res.status(400).json({ error: 'Target required' });
   const short = crypto.randomBytes(4).toString('hex');
-  const link = new Link({ short, target, senderUid, receiverUid: receiverUid || null });
+  const link = new Link({ short, target });
   await link.save();
-  res.json({ short, target, senderUid, receiverUid: receiverUid || null, url: `${req.protocol}://${req.get('host')}/${short}` });
+  res.json({ short, target, url: `${req.protocol}://${req.get('host')}/${short}` });
 });
 
 // GET /api/:short - redirect to target
