@@ -3,8 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const linkRoutes = require('./routes/link');
-const firebase = require('./firebase'); // Firebase connection
-const admin = require('firebase-admin');
+const admin = require('./firebase'); // Use the same admin instance for auth
 // Middleware to authenticate Firebase ID token
 async function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
