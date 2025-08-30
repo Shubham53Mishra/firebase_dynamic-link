@@ -16,9 +16,9 @@ app.get('/:short', async (req, res) => {
   const short = req.params.short;
   const link = await Link.findOne({ short });
   if (link) {
-    return res.redirect(link.target);
+    res.status(302).set('Location', link.target).send();
   } else {
-    return res.status(404).send('Link not found');
+    res.status(404).send('Link not found');
   }
 });
 
