@@ -47,10 +47,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 const crypto = require('crypto');
 app.post('/generate', authenticateToken, async (req, res) => {
   const { target, senderUid, receiverUid } = req.body;
-  if (!target || !senderUid || !receiverUid) return res.status(400).json({ error: 'Target, senderUid, receiverUid required' });
+  if (!target || !senderUid) return res.status(400).json({ error: 'Target and senderUid required' });
   const short = crypto.randomBytes(4).toString('hex');
   const Link = require('./models/Link');
-  const link = new Link({ short, target, senderUid, receiverUid });
+  const link = new Link({ short, target, senderUid, receiverUid: receiverUid || null });
   await link.save();
-  res.json({ short, target, senderUid, receiverUid, url: `${req.protocol}://${req.get('host')}/${short}` });
+  res.json({ short, target, senderUid, receiverUid: receiverUid || null, url: `${req.protocol}://${req.get('host')}/${short}` });
 });
